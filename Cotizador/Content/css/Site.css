@@ -1,0 +1,27 @@
+﻿:root {
+    --main-color: black;
+}
+
+
+.main-nav{
+    background-color:var(--main-color)!important;    
+}
+
+.main-logo{
+    width:8vh;
+    margin-left:5vw;    
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.text-title {
+    display: flex;
+    align-items: center;
+    font-size:2rem;
+}
+
+.text-title img{
+    margin-right:20px;
+}
