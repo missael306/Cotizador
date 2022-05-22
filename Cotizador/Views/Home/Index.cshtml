@@ -1,3 +1,48 @@
 ﻿@{
     ViewBag.Title = "Inicio";
 }
+<div class="row">
+    <div class="col">
+        <form class="card p-4">
+            <div class="mb-3">
+                <label for="model" class="form-label">¿Cuál es el modelo del auto que quieres?</label>
+                <select class="form-control" id="model">
+                    <option value="">-- Seleccione --</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">¿Cuánto cuesta el auto que quieres?</label>
+                <input type="text" class="form-control" id="price">
+            </div>
+            <div class="mb-3">
+                <label for="hitch" class="form-label">¿Cuánto quieres dar de enganche?</label>
+                <input type="text" class="form-control" id="hitch ">
+            </div>
+            <div class="mb-3">
+                <label for="brand" class="form-label">Marca</label>
+                <select class="form-control" id="brand">
+                    <option value="">-- Seleccione --</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="model" class="form-label">Modelo</label>
+                <select class="form-control" id="model">
+                    <option value="">-- Seleccione --</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Cotizar</button>
+        </form>
+    </div>
+    <div class="col">        
+        <img class="img-banner" src="~/Content/images/banner.jpg" />
+    </div>    
+</div>

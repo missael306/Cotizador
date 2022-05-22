@@ -25,3 +25,22 @@
 .text-title img{
     margin-right:20px;
 }
+
+.img-banner{
+    display:block;
+    height:100%;
+    width:100%;
+    border-radius:5px;
+}
+
+.body-content{
+    padding-top:20px;
+}
+
+.container {
+    width:65%;
+}
+
+.btn-primary {
+    background-color: #2A4B80
+}
