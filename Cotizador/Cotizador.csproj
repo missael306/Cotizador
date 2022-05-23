@@ -159,7 +159,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\comunes\comunes.js" />
+    <Content Include="Scripts\modulos\amortizacion.js" />
     <Content Include="Scripts\modulos\home.js" />
+    <None Include="Scripts\plugins\datatable_language.json" />
     <Content Include="Scripts\plugins\jquery.mask.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

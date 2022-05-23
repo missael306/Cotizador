@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-2">
                         @ViewBag.deadline meses
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
 </div>
 <div class="row mt-4">
     <div class="col">
-        <table class="table table-striped table-hover table-bordered">
+        <table class="table table-striped table-hover table-bordered" id="amortizationTable">
             <thead>
                 <tr>
                     <th>Pago</th>
@@ -53,7 +53,7 @@
                 </tr>
             </thead>
             <tbody>
-                                 
+
                 @for (int i = 1; i <= ViewBag.deadline; i++)
                 {
                     <tr>
@@ -67,14 +67,17 @@
                     payment.Sum = payment.Sum - payment.PayCapital((double)ViewBag.sum);
                     total += Math.Round(payment.PayCapital((double)ViewBag.sum + payment.PayInterest() + payment.PayIva()), 2);
                 }
-                
+
             </tbody>
             <tfoot>
                 <tr>
                     <td colspan="5">Total a pagar</td>
-                    <td>@string.Format("{0:C}",total)</td>
+                    <td>@string.Format("{0:C}", total)</td>
                 </tr>
             </tfoot>
         </table>
     </div>
 </div>
+@section scripts{
+    <script src="~/Scripts/modulos/amortizacion.js"></script>
+}
