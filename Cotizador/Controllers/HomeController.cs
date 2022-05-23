@@ -47,8 +47,19 @@ namespace Cotizador.Controllers
         }
 
         [HttpPost]
-        public ActionResult TablePay()
+        public ActionResult TablePay(double sum, int deadline)
         {
+            Setting iva = _db.Settings.Where(x => x.Id == (int)Settings.Iva).FirstOrDefault();
+            Setting percentInteres = _db.Settings.Where(x => x.Id == (int)Settings.TazaInteres).FirstOrDefault();
+            Pay payment = new Pay();
+            Pay pay = new Pay();
+            pay.Deadline = deadline;
+            pay.IVA = Convert.ToDouble(iva.Value);
+            pay.Rate = Convert.ToDouble(percentInteres.Value);
+            pay.Sum = sum;
+            ViewBag.payment = pay;
+            ViewBag.sum = sum;
+            ViewBag.deadline = deadline;            
             return View();
         }
         #endregion
