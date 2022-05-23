@@ -8,11 +8,11 @@
                 <h5>@item.Deadline Meses</h5>
                 <br />
                 <br />
-                <button class="btn btn-danger w-100">Solicitar</button>
+                <button class="btn btn-danger w-100 btnSolicitar">Solicitar</button>
                 <form action="/Home/TablePay" method="post" role="form" target="_blank">
                     <input type="hidden" name="deadline" value="@item.Deadline" />
                     <input type="hidden" name="sum" value="@item.Sum" />
-                    <button type="submit" class="btn btn-default w-100 center-text">Tabla de Amortización</button>
+                    <button type="submit" class="btn btn-default w-100 center-text mt-4">Tabla de Amortización</button>
                 </form>
             </div>
         </div>

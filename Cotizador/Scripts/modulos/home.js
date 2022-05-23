@@ -12,7 +12,7 @@ Cotizador.Home = (function () {
             validatePrice()
             validateHitch()
             simulate()
-            payOff()
+            payOff()            
         };
 
         let getModels = function () {
@@ -119,7 +119,21 @@ Cotizador.Home = (function () {
                     $("#mdlMounthsBody").html("")
                     $("#mdlMounthsBody").html(response)
                     $("#mdlMounths").modal("show")
+                    getCredit();
                 });
+            })
+        }
+
+        let getCredit = function () {
+            $(".btnSolicitar").click(function () {
+                $("#mdlMounths").modal("hide")
+                $.alert({
+                    title: 'Agradecemos tu preferencia',
+                    content: 'Un asesor se pondra en contacto contigo',
+                });
+                setTimeout(function () {
+                    window.location.reload()
+                }, 3000)                
             })
         }
     };
