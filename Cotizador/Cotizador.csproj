@@ -143,8 +143,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\DBCotizador.cs" />
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\GlobalResources.cs" />
     <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\Pay.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Views\Home\PayOff.cshtml" />
+    <Content Include="Views\Home\TablePay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\GeneralConfig.resx">

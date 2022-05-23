@@ -149,7 +149,22 @@
             Setting Porcentaje = new Setting();
             Porcentaje.Description = "Porcentaje de enganche mínimo";
             Porcentaje.Value = "20";
-            context.Settings.Add(Porcentaje);
+            context.Settings.Add(Porcentaje);            
+
+            Setting deadLines = new Setting();
+            deadLines.Description = "Plazos de financiamiento";
+            deadLines.Value = "24,36,48";
+            context.Settings.Add(deadLines);
+
+            Setting interest = new Setting();
+            interest.Description = "Taza de interés";
+            interest.Value = "16";
+            context.Settings.Add(interest);
+
+            Setting iva = new Setting();
+            iva.Description = "Porcentaje de iva";
+            iva.Value = "16";
+            context.Settings.Add(iva);
 
             base.Seed(context);
 

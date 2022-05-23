@@ -1,0 +1,24 @@
+﻿
+<form method="post" action="/Home/TablePay" role="form" id="frmPay">
+    <div class="row">
+        @foreach (var item in ViewBag.payment)
+        {
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>@item.Payment()</h4>
+                        <h5>@item.Deadline Meses</h5>
+                        <br />
+                        <br />
+                        <button class="btn btn-danger w-100">Solicitar</button>
+                        <form action="/Home/TablePayments" method="post">
+
+                            <button type="submit" class="btn btn-default w-100 center-text" >Tabla de Amortización</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }        
+    </div>
+</form>
+

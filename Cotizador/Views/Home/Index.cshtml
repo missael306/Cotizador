@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label for="model" class="form-label">¿Cuál es el año del modelo que quieres?</label>
-                <select class="form-control" id="year" disabled required>                    
+                <select class="form-control" id="year" disabled required name="year">
                 </select>
             </div>
             <div class="mb-3">
@@ -43,11 +43,26 @@
             <img class="img-cotiza" src="~/Content/images/img-cotiza.png" />
             <h4 class="text-center">Tu crédito sería de</h4>
             <span id="total" class="text-center money"></span>
-            <h4 class="text-center">¿Cuánto quieres pagar al mes?</h4>            
-            <button type="button" class="btn btn-danger" id="btnSimulate">Calcular</button>                            
+            <h4 class="text-center">¿Cuánto quieres pagar al mes?</h4>
+            <button type="button" class="btn btn-danger" id="btnSimulate">Calcular</button>
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="mdlMounths" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Cuánto quieres pagar al mes?</h5>                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="mdlMounthsBody">                
+            </div>            
+        </div>
+    </div>
+</div>
+
 @section scripts{
     <script src="~/Scripts/modulos/home.js"></script>
 }

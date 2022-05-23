@@ -13,7 +13,10 @@ Cotizador.Comun = (function () {
         this.KeySettings = {
             0 : "MontoMinimo",
             1 : "MontoMaximo",
-            2 : "PorcentajeEnganche"
+            2: "PorcentajeEnganche",
+            3: "Plazos",
+            4: "TazaInteres",
+            5: "Iva"
         };
 
         let Setting = function () {

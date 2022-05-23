@@ -12,6 +12,7 @@ Cotizador.Home = (function () {
             validatePrice()
             validateHitch()
             simulate()
+            payOff()
         };
 
         let getModels = function () {
@@ -103,6 +104,22 @@ Cotizador.Home = (function () {
                 $("#simulate").removeClass("d-none")
                 $("#imgBanner").addClass("d-none")
                 Comun.MaskInputs()
+            })
+        }
+
+        let payOff = function () {
+            $("#btnSimulate").click(function () {
+                let price = $("#price").cleanVal()
+                let hitch = $("#hitch").cleanVal()
+                $.ajax({
+                    type: "POST",
+                    url: `/Home/PayOff`,
+                    data: { price: price, hitch: hitch },
+                }).done(function (response) {
+                    $("#mdlMounthsBody").html("")
+                    $("#mdlMounthsBody").html(response)
+                    $("#mdlMounths").modal("show")
+                });
             })
         }
     };

@@ -25,6 +25,32 @@ namespace Cotizador.Controllers
             ViewBag.CatMarca = _db.Brands.ToList();
             return View();
         }        
+
+        [HttpPost]
+        public ActionResult PayOff(float price, float hitch)
+        {            
+            Setting deadlines = _db.Settings.Where(x => x.Id == (int)Settings.Plazos).FirstOrDefault();
+            Setting iva = _db.Settings.Where(x => x.Id == (int)Settings.Iva).FirstOrDefault();
+            Setting percentInteres = _db.Settings.Where(x => x.Id == (int)Settings.TazaInteres).FirstOrDefault();
+            List<Pay> payments = new List<Pay>();
+            foreach (var item in deadlines.Value.Split(','))
+            {
+                Pay pay = new Pay();
+                pay.Deadline = Convert.ToInt32(item);
+                pay.IVA = Convert.ToDouble(iva.Value);
+                pay.Rate = Convert.ToDouble(percentInteres.Value);
+                pay.Sum = price - hitch;
+                payments.Add(pay);                
+            }
+            ViewBag.payment = payments;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult TablePay()
+        {
+            return View();
+        }
         #endregion
     }
 }
