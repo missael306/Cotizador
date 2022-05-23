@@ -1,0 +1,19 @@
+﻿var Cotizador = Cotizador || {};
+Cotizador.Comun = Cotizador.Comun || {};
+
+Cotizador.Comun = (function () {
+    "use strict";
+    let ComunLoad = function () {
+
+        this.Initialize = function () {            
+        };        
+    };
+
+    return new ComunLoad();
+})();
+(function ($, window, document) {
+    "use strict";
+    $(function () {
+        Cotizador.Comun.Initialize();
+    });
+})(window.jQuery, window, document);

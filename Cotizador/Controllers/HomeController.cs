@@ -19,18 +19,12 @@ namespace Cotizador.Controllers
         }
         #endregion
 
-        #region Methods
-        public JsonResult InitialSetting()
-        {
-            List<Setting> lstConfig = _db.Settings.ToList();
-            return Json(new { data = lstConfig }, JsonRequestBehavior.AllowGet);
-        }
-
-
+        #region Methods        
         public ActionResult Index()
-        {
+        {            
+            ViewBag.CatMarca = _db.Brands.ToList();
             return View();
-        }
+        }        
         #endregion
     }
 }

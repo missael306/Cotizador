@@ -10,6 +10,7 @@ namespace Cotizador.Models
     [Table("Settings", Schema = "Config")]
     public class Setting
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         [StringLength(100)]

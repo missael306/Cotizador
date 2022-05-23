@@ -134,14 +134,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CatalogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\DBCotizador.cs" />
     <Compile Include="Models\GlobalResources.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\Year.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +155,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\Site.css" />
+    <Content Include="Scripts\comunes\comunes.js" />
+    <Content Include="Scripts\modulos\home.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -165,6 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\plugins\" />
+    <Folder Include="Views\Catalogos\" />
+    <Folder Include="Views\Setting\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
