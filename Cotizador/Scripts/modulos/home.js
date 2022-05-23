@@ -11,6 +11,7 @@ Cotizador.Home = (function () {
             getYears()
             validatePrice()
             validateHitch()
+            simulate()
         };
 
         let getModels = function () {
@@ -90,6 +91,18 @@ Cotizador.Home = (function () {
                         $("#btnCotizar").attr("disabled", "disabled")
                     }
                 }
+            })
+        }
+
+        let simulate = function () {
+            $("#formCotizar").submit(function (event) {
+                event.preventDefault();                
+                let price = $("#price").cleanVal()
+                let hitch = $("#hitch").cleanVal()
+                $("#total").html("<span class='money text-center d-block'>" + (price - hitch)+"</span>")
+                $("#simulate").removeClass("d-none")
+                $("#imgBanner").addClass("d-none")
+                Comun.MaskInputs()
             })
         }
     };

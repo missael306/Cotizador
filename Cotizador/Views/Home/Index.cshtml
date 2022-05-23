@@ -3,7 +3,7 @@
 }
 <div class="row">
     <div class="col">
-        <form class="card p-4">
+        <form class="card p-4" id="formCotizar">
             <div class="mb-3">
                 <label for="brand" class="form-label">Marca</label>
                 <select class="form-control" id="brand" required>
@@ -38,7 +38,14 @@
         </form>
     </div>
     <div class="col">
-        <img class="img-banner" src="~/Content/images/banner.jpg" />
+        <img id="imgBanner" class="img-banner" src="~/Content/images/banner.jpg" />
+        <div id="simulate" class="d-none">
+            <img class="img-cotiza" src="~/Content/images/img-cotiza.png" />
+            <h4 class="text-center">Tu crédito sería de</h4>
+            <span id="total" class="text-center money"></span>
+            <h4 class="text-center">¿Cuánto quieres pagar al mes?</h4>            
+            <button type="button" class="btn btn-danger" id="btnSimulate">Calcular</button>                            
+        </div>
     </div>
 </div>
 @section scripts{
