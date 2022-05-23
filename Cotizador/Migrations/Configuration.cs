@@ -136,6 +136,21 @@
             year12.YearName = "2012";
             context.Years.Add(year12);
 
+            Setting MinPrice = new Setting();
+            MinPrice.Description = "Monto mínimo a solicitar";
+            MinPrice.Value = "100000";
+            context.Settings.Add(MinPrice);
+
+            Setting MaxPrice = new Setting();
+            MaxPrice.Description = "Monto máximo a solicitar";
+            MaxPrice.Value = "1000000";
+            context.Settings.Add(MaxPrice);
+
+            Setting Porcentaje = new Setting();
+            Porcentaje.Description = "Porcentaje de enganche mínimo";
+            Porcentaje.Value = "20";
+            context.Settings.Add(Porcentaje);
+
             base.Seed(context);
 
         }

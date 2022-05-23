@@ -157,6 +157,7 @@
     <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\comunes\comunes.js" />
     <Content Include="Scripts\modulos\home.js" />
+    <Content Include="Scripts\plugins\jquery.mask.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -172,7 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\plugins\" />
     <Folder Include="Views\Catalogos\" />
     <Folder Include="Views\Setting\" />
   </ItemGroup>

@@ -44,3 +44,12 @@
 .btn-primary {
     background-color: #2A4B80
 }
+
+.form-text{
+    color:red;
+}
+
+.btn:disabled{
+    background-color:darkgray;
+    cursor:not-allowed;
+}

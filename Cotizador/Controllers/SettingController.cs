@@ -21,7 +21,7 @@ namespace Cotizador.Controllers
         #endregion
 
         #region Methods    
-        public JsonResult InitialSetting()
+        public JsonResult GetInitialSetting()
         {
             List<Setting> lstConfig = _db.Settings.ToList();
             return Json(new { data = lstConfig }, JsonRequestBehavior.AllowGet);

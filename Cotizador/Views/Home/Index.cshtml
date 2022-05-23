@@ -6,7 +6,7 @@
         <form class="card p-4">
             <div class="mb-3">
                 <label for="brand" class="form-label">Marca</label>
-                <select class="form-control" id="brand">
+                <select class="form-control" id="brand" required>
                     <option value="">-- Seleccione --</option>
                     @foreach (var item in ViewBag.CatMarca)
                     {
@@ -16,23 +16,25 @@
             </div>
             <div class="mb-3">
                 <label for="model" class="form-label">Modelo</label>
-                <select class="form-control" id="model" disabled>
+                <select class="form-control" id="model" disabled required>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="model" class="form-label">¿Cuál es el año del modelo que quieres?</label>
-                <select class="form-control" id="year" disabled>                    
+                <select class="form-control" id="year" disabled required>                    
                 </select>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">¿Cuánto cuesta el auto que quieres?</label>
-                <input type="text" class="form-control" id="price">
+                <input type="text" class="form-control money" id="price" maxlength="9" min="7" required>
+                <div id="priceHelp" class="form-text"></div>
             </div>
             <div class="mb-3">
                 <label for="hitch" class="form-label">¿Cuánto quieres dar de enganche?</label>
-                <input type="text" class="form-control" id="hitch ">
+                <input type="text" class="form-control money" id="hitch" maxlength="9" required>
+                <div id="hitchHelp" class="form-text"></div>
             </div>
-            <button type="submit" class="btn btn-primary">Cotizar</button>
+            <button type="submit" class="btn btn-primary" id="btnCotizar">Cotizar</button>
         </form>
     </div>
     <div class="col">

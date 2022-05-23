@@ -7,8 +7,10 @@ Cotizador.Home = (function () {
         let Comun = Cotizador.Comun;        
 
         this.initialize = function () {
-            getModels();
-            getYears();
+            getModels()
+            getYears()
+            validatePrice()
+            validateHitch()
         };
 
         let getModels = function () {
@@ -42,6 +44,52 @@ Cotizador.Home = (function () {
                         $("#year").removeAttr("disabled")
                     })
                 });
+            })
+        }
+
+        let validatePrice = function () {
+            $("#price").focusin(function () {
+                $("#priceHelp").html("")
+                $("#btnCotizar").removeAttr("disabled")
+            })
+
+            $("#price").focusout(function () {
+                let value = parseFloat($("#price").cleanVal());
+                if (value) {
+                    let minPrice = parseFloat(localStorage.getItem(Cotizador.Comun.KeySettings[0]));
+                    let maxPrice = parseFloat(localStorage.getItem(Cotizador.Comun.KeySettings[1]));
+                    if (!(minPrice <= value && maxPrice >= value)) {
+                        $("#priceHelp").html("Ingresa un monto entre <span class='money' >" + minPrice + "</span> y <span class='money' >" + maxPrice + "</span>")
+                        Comun.MaskInputs();
+                        $("#btnCotizar").attr("disabled", "disabled")
+                    }
+                }
+                
+            })
+        }
+
+        let validateHitch = function () {
+            $("#hitch").focusin(function () {
+                $("#hitchHelp").html("");
+                $("#btnCotizar").removeAttr("disabled")
+            })
+
+            $("#hitch").focusout(function () {
+                let value = $("#hitch").cleanVal()
+                if (value) {                    
+                    let percentHitch = parseFloat(localStorage.getItem(Cotizador.Comun.KeySettings[2]));
+                    let price = parseFloat($("#price").cleanVal());
+                    let minHitch = parseInt((percentHitch * price) / 100)
+                    if (value < minHitch) {
+                        $("#hitchHelp").html("El enganche mínimo debe ser de <span class='money' >" + minHitch + "</span>  (" + percentHitch + " % de <span class='money' >" + price + "</span>)")
+                        Comun.MaskInputs();
+                        $("#btnCotizar").attr("disabled", "disabled")
+                    }
+                    if (value > price) {
+                        $("#hitchHelp").text("El enganche no puede superar el precio del vehículo")
+                        $("#btnCotizar").attr("disabled", "disabled")
+                    }
+                }
             })
         }
     };
